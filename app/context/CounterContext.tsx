@@ -6,7 +6,7 @@ const CounterContext = React.createContext<
   [number, React.Dispatch<React.SetStateAction<number>>] | undefined
 >(undefined);
 
-export function CounterProvider({ children }: { children: React.ReactNode }) {
+export function CounterProvider({children}: { children: React.ReactNode }) {
   const [count, setCount] = React.useState(0);
   return (
     <CounterContext.Provider value={[count, setCount]}>

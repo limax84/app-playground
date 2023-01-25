@@ -1,18 +1,18 @@
-import { Product } from '#/types/Product';
-import { ProductBestSeller } from '#/ui/ProductBestSeller';
-import { ProductEstimatedArrival } from '#/ui/ProductEstimatedArrival';
-import { ProductLowStockWarning } from '#/ui/ProductLowStockWarning';
-import { ProductPrice } from '#/ui/ProductPrice';
-import { ProductRating } from '#/ui/ProductRating';
-import { ProductUsedPrice } from '#/ui/ProductUsedPrice';
-import { dinero, type DineroSnapshot } from 'dinero.js';
+import {Product} from '#/types/Product';
+import {ProductBestSeller} from '#/ui/ProductBestSeller';
+import {ProductEstimatedArrival} from '#/ui/ProductEstimatedArrival';
+import {ProductLowStockWarning} from '#/ui/ProductLowStockWarning';
+import {ProductPrice} from '#/ui/ProductPrice';
+import {ProductRating} from '#/ui/ProductRating';
+import {ProductUsedPrice} from '#/ui/ProductUsedPrice';
+import {dinero, type DineroSnapshot} from 'dinero.js';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export const ProductCard = ({
-  product,
-  href,
-}: {
+                              product,
+                              href,
+                            }: {
   product: Product;
   href: string;
 }) => {
@@ -24,7 +24,7 @@ export const ProductCard = ({
         <div className="relative">
           {product.isBestSeller ? (
             <div className="absolute top-2 left-2 z-10 flex">
-              <ProductBestSeller />
+              <ProductBestSeller/>
             </div>
           ) : null}
           <Image
@@ -42,20 +42,20 @@ export const ProductCard = ({
           {product.name}
         </div>
 
-        {product.rating ? <ProductRating rating={product.rating} /> : null}
+        {product.rating ? <ProductRating rating={product.rating}/> : null}
 
-        <ProductPrice price={price} discount={product.discount} />
+        <ProductPrice price={price} discount={product.discount}/>
 
         {/* <ProductSplitPayments price={price} /> */}
 
         {product.usedPrice ? (
-          <ProductUsedPrice usedPrice={product.usedPrice} />
+          <ProductUsedPrice usedPrice={product.usedPrice}/>
         ) : null}
 
-        <ProductEstimatedArrival leadTime={product.leadTime} />
+        <ProductEstimatedArrival leadTime={product.leadTime}/>
 
         {product.stock <= 1 ? (
-          <ProductLowStockWarning stock={product.stock} />
+          <ProductLowStockWarning stock={product.stock}/>
         ) : null}
       </div>
     </Link>

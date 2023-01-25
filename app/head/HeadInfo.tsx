@@ -1,8 +1,8 @@
 'use client';
 
-import { Boundary } from '#/ui/Boundary';
-import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import {Boundary} from '#/ui/Boundary';
+import {usePathname} from 'next/navigation';
+import {useEffect, useState} from 'react';
 
 const getMetaContent = (name: string) =>
   document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`)?.content ||

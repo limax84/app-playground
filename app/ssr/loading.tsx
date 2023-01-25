@@ -1,5 +1,5 @@
-import { RenderingPageSkeleton } from '#/ui/RenderingPageSkeleton';
+import {RenderingPageSkeleton} from '#/ui/RenderingPageSkeleton';
 
 export default function Loading() {
-  return <RenderingPageSkeleton />;
+  return <RenderingPageSkeleton/>;
 }

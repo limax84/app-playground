@@ -1,9 +1,9 @@
-import { add, format, isTomorrow } from 'date-fns';
+import {add, format, isTomorrow} from 'date-fns';
 
 export const ProductEstimatedArrival = ({
-  leadTime,
-  hasDeliveryTime = false,
-}: {
+                                          leadTime,
+                                          hasDeliveryTime = false,
+                                        }: {
   leadTime: number;
   hasDeliveryTime?: boolean;
 }) => {

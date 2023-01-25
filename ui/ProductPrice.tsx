@@ -1,8 +1,8 @@
-import { Product } from '#/types/Product';
-import { ProductCurrencySymbol } from '#/ui/ProductCurrencySymbol';
-import { ProductDeal } from '#/ui/ProductDeal';
-import { ProductLighteningDeal } from '#/ui/ProductLighteningDeal';
-import { multiply, toUnit, type Dinero } from 'dinero.js';
+import {Product} from '#/types/Product';
+import {ProductCurrencySymbol} from '#/ui/ProductCurrencySymbol';
+import {ProductDeal} from '#/ui/ProductDeal';
+import {ProductLighteningDeal} from '#/ui/ProductLighteningDeal';
+import {type Dinero, multiply, toUnit} from 'dinero.js';
 
 function isDiscount(obj: any): obj is { percent: number; expires?: number } {
   return typeof obj?.percent === 'number';
@@ -14,19 +14,19 @@ function formatDiscount(
 ) {
   return isDiscount(discountRaw)
     ? {
-        amount: multiply(price, {
-          amount: discountRaw.percent,
-          scale: 2,
-        }),
-        expires: discountRaw.expires,
-      }
+      amount: multiply(price, {
+        amount: discountRaw.percent,
+        scale: 2,
+      }),
+      expires: discountRaw.expires,
+    }
     : undefined;
 }
 
 export const ProductPrice = ({
-  price,
-  discount: discountRaw,
-}: {
+                               price,
+                               discount: discountRaw,
+                             }: {
   price: Dinero<number>;
   discount: Product['discount'];
 }) => {
@@ -34,15 +34,15 @@ export const ProductPrice = ({
 
   if (discount) {
     if (discount?.expires && typeof discount.expires === 'number') {
-      return <ProductLighteningDeal price={price} discount={discount} />;
+      return <ProductLighteningDeal price={price} discount={discount}/>;
     }
-    return <ProductDeal price={price} discount={discount} />;
+    return <ProductDeal price={price} discount={discount}/>;
   }
 
   return (
     <div className="flex">
       <div className="text-sm leading-snug text-white">
-        <ProductCurrencySymbol dinero={price} />
+        <ProductCurrencySymbol dinero={price}/>
       </div>
       <div className="text-lg font-bold leading-snug text-white">
         {toUnit(price)}

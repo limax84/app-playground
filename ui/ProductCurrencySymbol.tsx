@@ -1,12 +1,12 @@
-import { toFormat, type Dinero } from 'dinero.js';
+import {type Dinero, toFormat} from 'dinero.js';
 
 export const ProductCurrencySymbol = ({
-  dinero,
-}: {
+                                        dinero,
+                                      }: {
   dinero: Dinero<number>;
 }) => {
   let symbol = '';
-  switch (toFormat(dinero, ({ currency }) => currency.code)) {
+  switch (toFormat(dinero, ({currency}) => currency.code)) {
     case 'GBP': {
       symbol = '£';
       break;

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { usePathname } from 'next/navigation';
+import {usePathname} from 'next/navigation';
 
 export function AddressBar() {
   const pathname = usePathname();

@@ -1,7 +1,7 @@
-import { fetchCategoryBySlug, PageProps } from '#/lib/getCategories';
-import { SkeletonCard } from '#/ui/SkeletonCard';
+import {fetchCategoryBySlug, PageProps} from '#/lib/getCategories';
+import {SkeletonCard} from '#/ui/SkeletonCard';
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({params}: PageProps) {
   const category = await fetchCategoryBySlug(params.categorySlug);
   if (!category) return null;
   return (
@@ -11,8 +11,8 @@ export default async function Page({ params }: PageProps) {
       </h1>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {Array.from({ length: 9 }).map((_, i) => (
-          <SkeletonCard key={i} />
+        {Array.from({length: 9}).map((_, i) => (
+          <SkeletonCard key={i}/>
         ))}
       </div>
     </div>

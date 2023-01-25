@@ -3,10 +3,10 @@
 const SkeletonCard = () => (
   <>
     <div className="skeleton">
-      <div className="skeleton-img" />
-      <div className="skeleton-btn" />
-      <div className="skeleton-line-one" />
-      <div className="skeleton-line-two" />
+      <div className="skeleton-img"/>
+      <div className="skeleton-btn"/>
+      <div className="skeleton-line-one"/>
+      <div className="skeleton-line-two"/>
     </div>
     <style jsx>{`
       .skeleton {
@@ -62,9 +62,9 @@ export default function Page() {
         Styled with Styled JSX
       </h1>
       <div className="container">
-        <SkeletonCard />
-        <SkeletonCard />
-        <SkeletonCard />
+        <SkeletonCard/>
+        <SkeletonCard/>
+        <SkeletonCard/>
       </div>
 
       <style jsx>{`

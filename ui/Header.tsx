@@ -36,7 +36,7 @@ const NextJsLogo = (props: any) => (
 export default function Header() {
   return (
     <HeadContainer>
-      <NextJsLogo height={40} fill={`rgb(244 244 245)`} />
+      <NextJsLogo height={40} fill={`rgb(244 244 245)`}/>
       <Title>The React Framework</Title>
     </HeadContainer>
   );

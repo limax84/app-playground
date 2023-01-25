@@ -1,12 +1,12 @@
 'use client';
 
-import { demos, type Item } from '#/lib/demos';
-import { NextLogo } from '#/ui/NextLogo';
+import {demos, type Item} from '#/lib/demos';
+import {NextLogo} from '#/ui/NextLogo';
 import Link from 'next/link';
-import { useSelectedLayoutSegment } from 'next/navigation';
-import { MenuAlt2Icon, XIcon } from '@heroicons/react/solid';
+import {useSelectedLayoutSegment} from 'next/navigation';
+import {MenuAlt2Icon, XIcon} from '@heroicons/react/solid';
 import clsx from 'clsx';
-import { useState } from 'react';
+import {useState} from 'react';
 
 export function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,7 @@ export function GlobalNav() {
           onClick={close}
         >
           <div className="h-7 w-7 rounded-full border border-white/30 group-hover:border-white/50">
-            <NextLogo />
+            <NextLogo/>
           </div>
 
           <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
@@ -38,9 +38,9 @@ export function GlobalNav() {
           Menu
         </div>
         {isOpen ? (
-          <XIcon className="block w-6 text-gray-400" />
+          <XIcon className="block w-6 text-gray-400"/>
         ) : (
-          <MenuAlt2Icon className="block w-6 text-gray-400" />
+          <MenuAlt2Icon className="block w-6 text-gray-400"/>
         )}
       </button>
 
@@ -60,7 +60,7 @@ export function GlobalNav() {
 
                 <div className="space-y-1">
                   {section.items.map((item) => (
-                    <GlobalNavItem key={item.slug} item={item} close={close} />
+                    <GlobalNavItem key={item.slug} item={item} close={close}/>
                   ))}
                 </div>
               </div>
@@ -73,9 +73,9 @@ export function GlobalNav() {
 }
 
 function GlobalNavItem({
-  item,
-  close,
-}: {
+                         item,
+                         close,
+                       }: {
   item: Item;
   close: () => false | void;
 }) {

@@ -1,12 +1,12 @@
-import { fetchCategories } from '#/lib/getCategories';
-import { Boundary } from '#/ui/Boundary';
-import { ClickCounter } from '#/ui/ClickCounter';
-import { TabGroup } from '#/ui/TabGroup';
+import {fetchCategories} from '#/lib/getCategories';
+import {Boundary} from '#/ui/Boundary';
+import {ClickCounter} from '#/ui/ClickCounter';
+import {TabGroup} from '#/ui/TabGroup';
 import React from 'react';
 
 export default async function Layout({
-  children,
-}: {
+                                       children,
+                                     }: {
   children: React.ReactNode;
 }) {
   const categories = await fetchCategories();
@@ -24,13 +24,13 @@ export default async function Layout({
                 text: x.name,
                 slug: x.slug,
               })),
-              { text: 'Checkout', slug: 'checkout' },
-              { text: 'Blog', slug: 'blog' },
+              {text: 'Checkout', slug: 'checkout'},
+              {text: 'Blog', slug: 'blog'},
             ]}
           />
 
           <div className="self-start">
-            <ClickCounter />
+            <ClickCounter/>
           </div>
         </div>
 

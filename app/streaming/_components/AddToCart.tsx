@@ -1,10 +1,10 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { useTransition } from 'react';
-import { useCartCount } from './CartCountContext';
+import {useRouter} from 'next/navigation';
+import {useTransition} from 'react';
+import {useCartCount} from './CartCountContext';
 
-export function AddToCart({ initialCartCount }: { initialCartCount: number }) {
+export function AddToCart({initialCartCount}: { initialCartCount: number }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 

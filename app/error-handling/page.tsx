@@ -1,5 +1,5 @@
 import BuggyButton from '#/ui/BuggyButton';
-import { ExternalLink } from '#/ui/ExternalLink';
+import {ExternalLink} from '#/ui/ExternalLink';
 
 export default function Page() {
   return (
@@ -7,7 +7,7 @@ export default function Page() {
       <div className="flex justify-between gap-x-3">
         <h1 className="text-xl font-medium text-gray-400/80">Error Handling</h1>
 
-        <BuggyButton />
+        <BuggyButton/>
       </div>
 
       <ul className="list-disc space-y-2 pl-4 text-sm text-gray-300">

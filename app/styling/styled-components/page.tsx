@@ -46,10 +46,10 @@ const SkeletonLineTwo = styled.div`
 
 const Skeleton = () => (
   <SkeletonInner>
-    <SkeletonImg />
-    <SkeletonBtn />
-    <SkeletonLineOne />
-    <SkeletonLineTwo />
+    <SkeletonImg/>
+    <SkeletonBtn/>
+    <SkeletonLineOne/>
+    <SkeletonLineTwo/>
   </SkeletonInner>
 );
 
@@ -60,9 +60,9 @@ export default function Page() {
         Styled with Styled Components
       </h1>
       <Container>
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
+        <Skeleton/>
+        <Skeleton/>
+        <Skeleton/>
       </Container>
     </div>
   );

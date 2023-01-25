@@ -25,12 +25,12 @@ module.exports = {
           violet: '#7928CA',
         },
       },
-      backgroundImage: ({ theme }) => ({
+      backgroundImage: ({theme}) => ({
         'vc-border-gradient': `radial-gradient(at left top, ${theme(
           'colors.gray.500',
         )}, 50px, ${theme('colors.gray.800')} 50%)`,
       }),
-      keyframes: ({ theme }) => ({
+      keyframes: ({theme}) => ({
         rerender: {
           '0%': {
             ['border-color']: theme('colors.vercel.pink'),

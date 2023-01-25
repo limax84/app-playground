@@ -2,10 +2,10 @@ import './styles.css';
 
 const SkeletonCard = () => (
   <div className="skeleton">
-    <div className="skeleton-img" />
-    <div className="skeleton-btn" />
-    <div className="skeleton-line-one" />
-    <div className="skeleton-line-two" />
+    <div className="skeleton-img"/>
+    <div className="skeleton-btn"/>
+    <div className="skeleton-line-one"/>
+    <div className="skeleton-line-two"/>
   </div>
 );
 
@@ -16,9 +16,9 @@ export default function Page() {
         Styled with a Global CSS Stylesheet
       </h1>
       <div className="container">
-        <SkeletonCard />
-        <SkeletonCard />
-        <SkeletonCard />
+        <SkeletonCard/>
+        <SkeletonCard/>
+        <SkeletonCard/>
       </div>
     </div>
   );

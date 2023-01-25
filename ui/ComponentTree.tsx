@@ -1,4 +1,4 @@
-import { Boundary } from '#/ui/Boundary';
+import {Boundary} from '#/ui/Boundary';
 import CountUp from '#/ui/CountUp';
 import clsx from 'clsx';
 
@@ -9,7 +9,7 @@ type Item = {
   children?: Item[];
 };
 
-const List = ({ items, depth }: { items: Item[]; depth: number }) => {
+const List = ({items, depth}: { items: Item[]; depth: number }) => {
   return (
     <div>
       {items.map((item, i) => {
@@ -22,19 +22,19 @@ const List = ({ items, depth }: { items: Item[]; depth: number }) => {
               depth === 0
                 ? undefined // Ignore first level
                 : clsx(
-                    'relative ml-5 pt-2',
-                    // Use the border of pseudo elements to visualize hierarchy
-                    // │
-                    'before:absolute before:-left-2.5 before:top-0 before:border-l-2 before:border-gray-800',
-                    // ──
-                    'after:absolute after:top-[17px] after:-left-2.5 after:h-3 after:w-2.5 after:border-t-2 after:border-gray-800',
-                    {
-                      // ├─
-                      'before:h-full': !isLast,
-                      // └─
-                      'before:h-[17px]': isLast,
-                    },
-                  )
+                  'relative ml-5 pt-2',
+                  // Use the border of pseudo elements to visualize hierarchy
+                  // │
+                  'before:absolute before:-left-2.5 before:top-0 before:border-l-2 before:border-gray-800',
+                  // ──
+                  'after:absolute after:top-[17px] after:-left-2.5 after:h-3 after:w-2.5 after:border-t-2 after:border-gray-800',
+                  {
+                    // ├─
+                    'before:h-full': !isLast,
+                    // └─
+                    'before:h-[17px]': isLast,
+                  },
+                )
             }
           >
             <div className="flex gap-x-1">
@@ -65,7 +65,7 @@ const List = ({ items, depth }: { items: Item[]; depth: number }) => {
                   {item.type === 'client' ? (
                     item.size / 1000
                   ) : (
-                    <CountUp start={item.size / 1000} end={0} />
+                    <CountUp start={item.size / 1000} end={0}/>
                   )}
                 </span>{' '}
                 KB
@@ -73,7 +73,7 @@ const List = ({ items, depth }: { items: Item[]; depth: number }) => {
             </div>
 
             {item.children ? (
-              <List items={item.children} depth={depth + 1} />
+              <List items={item.children} depth={depth + 1}/>
             ) : null}
           </div>
         );
@@ -96,7 +96,7 @@ const sum = (items: Item[], componentType: Item['type']): number =>
     0,
   );
 
-export const ComponentTree = ({ items }: { items: Item[] }) => {
+export const ComponentTree = ({items}: { items: Item[] }) => {
   const clientTotal = sum(items, 'client');
   const serverTotal = sum(items, 'server');
   const clientDeltaAsPercent = Math.round(
@@ -108,7 +108,7 @@ export const ComponentTree = ({ items }: { items: Item[] }) => {
       <div className="space-y-6">
         <div className="flex">
           <div className="flex-1">
-            <List items={items} depth={0} />
+            <List items={items} depth={0}/>
           </div>
 
           <div className="space-y-6">

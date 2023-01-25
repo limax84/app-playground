@@ -1,9 +1,9 @@
-import { DefaultTags } from '#/ui/DefaultTags';
+import {DefaultTags} from '#/ui/DefaultTags';
 
 export default function Head() {
   return (
     <>
-      <DefaultTags />
+      <DefaultTags/>
       <title>Next.js App Directory Playground</title>
       <meta
         name="description"

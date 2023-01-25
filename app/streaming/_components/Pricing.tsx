@@ -1,13 +1,13 @@
-import type { Product } from '#/types/Product';
-import { Ping } from '#/ui/Ping';
-import { ProductEstimatedArrival } from '#/ui/ProductEstimatedArrival';
-import { ProductLowStockWarning } from '#/ui/ProductLowStockWarning';
-import { ProductPrice } from '#/ui/ProductPrice';
-import { ProductSplitPayments } from '#/ui/ProductSplitPayments';
-import { ProductUsedPrice } from '#/ui/ProductUsedPrice';
-import { dinero, type DineroSnapshot } from 'dinero.js';
-import { Suspense } from 'react';
-import { AddToCart } from './AddToCart';
+import type {Product} from '#/types/Product';
+import {Ping} from '#/ui/Ping';
+import {ProductEstimatedArrival} from '#/ui/ProductEstimatedArrival';
+import {ProductLowStockWarning} from '#/ui/ProductLowStockWarning';
+import {ProductPrice} from '#/ui/ProductPrice';
+import {ProductSplitPayments} from '#/ui/ProductSplitPayments';
+import {ProductUsedPrice} from '#/ui/ProductUsedPrice';
+import {dinero, type DineroSnapshot} from 'dinero.js';
+import {Suspense} from 'react';
+import {AddToCart} from './AddToCart';
 
 function LoadingDots() {
   return (
@@ -27,7 +27,7 @@ function LoadingDots() {
   );
 }
 
-async function UserSpecificDetails({ productId }: { productId: string }) {
+async function UserSpecificDetails({productId}: { productId: string }) {
   const data = await fetch(
     `https://app-dir.vercel.app/api/products?id=${productId}&delay=500&filter=price,usedPrice,leadTime,stock`,
   );
@@ -38,22 +38,22 @@ async function UserSpecificDetails({ productId }: { productId: string }) {
 
   return (
     <>
-      <ProductSplitPayments price={price} />
+      <ProductSplitPayments price={price}/>
       {product.usedPrice ? (
-        <ProductUsedPrice usedPrice={product.usedPrice} />
+        <ProductUsedPrice usedPrice={product.usedPrice}/>
       ) : null}
-      <ProductEstimatedArrival leadTime={product.leadTime} hasDeliveryTime />
+      <ProductEstimatedArrival leadTime={product.leadTime} hasDeliveryTime/>
       {product.stock <= 1 ? (
-        <ProductLowStockWarning stock={product.stock} />
+        <ProductLowStockWarning stock={product.stock}/>
       ) : null}
     </>
   );
 }
 
 export function Pricing({
-  product,
-  cartCount,
-}: {
+                          product,
+                          cartCount,
+                        }: {
   product: Product;
   cartCount: string;
 }) {
@@ -61,20 +61,20 @@ export function Pricing({
 
   return (
     <div className="space-y-4 rounded-lg bg-gray-900 p-3">
-      <ProductPrice price={price} discount={product.discount} />
+      <ProductPrice price={price} discount={product.discount}/>
 
       <div className="relative">
         <div className="absolute top-1 -left-4">
-          <Ping />
+          <Ping/>
         </div>
       </div>
 
-      <Suspense fallback={<LoadingDots />}>
+      <Suspense fallback={<LoadingDots/>}>
         {/* @ts-expect-error Async Server Component */}
-        <UserSpecificDetails productId={product.id} />
+        <UserSpecificDetails productId={product.id}/>
       </Suspense>
 
-      <AddToCart initialCartCount={Number(cartCount)} />
+      <AddToCart initialCartCount={Number(cartCount)}/>
     </div>
   );
 }

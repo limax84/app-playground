@@ -1,10 +1,10 @@
-import { Product } from '#/types/Product';
-import { ProductCard } from '#/ui/ProductCard';
+import {Product} from '#/types/Product';
+import {ProductCard} from '#/ui/ProductCard';
 
 export async function RecommendedProducts({
-  productId,
-  path,
-}: {
+                                            productId,
+                                            path,
+                                          }: {
   productId: string;
   path: string;
 }) {
@@ -29,7 +29,7 @@ export async function RecommendedProducts({
       <div className="grid grid-cols-4 gap-6">
         {products.map((product) => (
           <div key={product.id} className="col-span-4 lg:col-span-1">
-            <ProductCard product={product} href={`${path}/${product.id}`} />
+            <ProductCard product={product} href={`${path}/${product.id}`}/>
           </div>
         ))}
       </div>
@@ -42,12 +42,12 @@ const shimmer = `relative overflow-hidden before:absolute before:inset-0 before:
 function ProductSkeleton() {
   return (
     <div className="col-span-4 space-y-4 lg:col-span-1">
-      <div className={`relative h-[167px] rounded-xl bg-gray-900 ${shimmer}`} />
+      <div className={`relative h-[167px] rounded-xl bg-gray-900 ${shimmer}`}/>
 
-      <div className="h-4 w-full rounded-lg bg-gray-900" />
-      <div className="h-6 w-1/3 rounded-lg bg-gray-900" />
-      <div className="h-4 w-full rounded-lg bg-gray-900" />
-      <div className="h-4 w-4/6 rounded-lg bg-gray-900" />
+      <div className="h-4 w-full rounded-lg bg-gray-900"/>
+      <div className="h-6 w-1/3 rounded-lg bg-gray-900"/>
+      <div className="h-4 w-full rounded-lg bg-gray-900"/>
+      <div className="h-4 w-4/6 rounded-lg bg-gray-900"/>
     </div>
   );
 }
@@ -56,15 +56,15 @@ export function RecommendedProductsSkeleton() {
   return (
     <div className="space-y-6 pb-[5px]">
       <div className="space-y-2">
-        <div className={`h-6 w-1/3 rounded-lg bg-gray-900 ${shimmer}`} />
-        <div className={`h-4 w-1/2 rounded-lg bg-gray-900 ${shimmer}`} />
+        <div className={`h-6 w-1/3 rounded-lg bg-gray-900 ${shimmer}`}/>
+        <div className={`h-4 w-1/2 rounded-lg bg-gray-900 ${shimmer}`}/>
       </div>
 
       <div className="grid grid-cols-4 gap-6">
-        <ProductSkeleton />
-        <ProductSkeleton />
-        <ProductSkeleton />
-        <ProductSkeleton />
+        <ProductSkeleton/>
+        <ProductSkeleton/>
+        <ProductSkeleton/>
+        <ProductSkeleton/>
       </div>
     </div>
   );

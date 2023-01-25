@@ -1,15 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 const CartCountContext = React.createContext<
   [number, React.Dispatch<React.SetStateAction<null | number>>] | undefined
 >(undefined);
 
 export function CartCountProvider({
-  children,
-  initialCartCount,
-}: {
+                                    children,
+                                    initialCartCount,
+                                  }: {
   children: React.ReactNode;
   initialCartCount: number;
 }) {

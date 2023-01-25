@@ -2,10 +2,10 @@ import clsx from 'clsx';
 import React from 'react';
 
 const Label = ({
-  children,
-  animateRerendering,
-  color,
-}: {
+                 children,
+                 animateRerendering,
+                 color,
+               }: {
   children: React.ReactNode;
   animateRerendering?: boolean;
   color?: 'default' | 'pink' | 'blue' | 'violet' | 'cyan' | 'orange';
@@ -27,12 +27,12 @@ const Label = ({
   );
 };
 export const Boundary = ({
-  children,
-  labels = ['children'],
-  size = 'default',
-  color = 'default',
-  animateRerendering = true,
-}: {
+                           children,
+                           labels = ['children'],
+                           size = 'default',
+                           color = 'default',
+                           animateRerendering = true,
+                         }: {
   children: React.ReactNode;
   labels?: string[];
   size?: 'small' | 'default';
@@ -51,7 +51,7 @@ export const Boundary = ({
         'border-vercel-violet': color === 'violet',
         'border-vercel-orange': color === 'orange',
         'animate-[rerender_1s_ease-in-out_1] text-vercel-pink':
-          animateRerendering,
+        animateRerendering,
       })}
     >
       <div

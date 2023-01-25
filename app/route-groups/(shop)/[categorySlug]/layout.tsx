@@ -1,8 +1,8 @@
-import { fetchCategoryBySlug, PageProps } from '#/lib/getCategories';
-import { ClickCounter } from '#/ui/ClickCounter';
-import { TabGroup } from '#/ui/TabGroup';
+import {fetchCategoryBySlug, PageProps} from '#/lib/getCategories';
+import {ClickCounter} from '#/ui/ClickCounter';
+import {TabGroup} from '#/ui/TabGroup';
 
-export default async function Layout({ children, params }: PageProps) {
+export default async function Layout({children, params}: PageProps) {
   const category = await fetchCategoryBySlug(params.categorySlug);
   if (!category) return null;
 
@@ -23,7 +23,7 @@ export default async function Layout({ children, params }: PageProps) {
         />
 
         <div className="self-start">
-          <ClickCounter />
+          <ClickCounter/>
         </div>
       </div>
       <div>{children}</div>

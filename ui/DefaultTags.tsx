@@ -2,7 +2,7 @@
 export function DefaultTags() {
   return (
     <>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <link
         href="/favicon/apple-touch-icon.png"
         rel="apple-touch-icon"
@@ -20,13 +20,13 @@ export function DefaultTags() {
         sizes="16x16"
         type="image/png"
       />
-      <link href="/favicon/site.webmanifest" rel="manifest" />
+      <link href="/favicon/site.webmanifest" rel="manifest"/>
       <link
         color="#000000"
         href="/favicon/safari-pinned-tab.svg"
         rel="mask-icon"
       />
-      <link href="/favicon/favicon.ico" rel="shortcut icon" />
+      <link href="/favicon/favicon.ico" rel="shortcut icon"/>
     </>
   );
 }

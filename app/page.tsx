@@ -1,4 +1,4 @@
-import { demos } from '#/lib/demos';
+import {demos} from '#/lib/demos';
 import Link from 'next/link';
 
 export default function Page() {
@@ -6,7 +6,7 @@ export default function Page() {
     <div className="space-y-8">
       <h1 className="text-xl font-medium text-gray-300">Examples</h1>
 
-      <div className="space-y-10 text-white">
+      <div className="text-white space-y-10">
         {demos.map((section) => {
           return (
             <div key={section.name} className="space-y-5">

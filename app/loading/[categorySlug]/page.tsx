@@ -1,9 +1,5 @@
-import {
-  fetchCategoryBySlug,
-  PageProps,
-  type Category,
-} from '#/lib/getCategories';
-import { SkeletonCard } from '#/ui/SkeletonCard';
+import {type Category, fetchCategoryBySlug, PageProps,} from '#/lib/getCategories';
+import {SkeletonCard} from '#/ui/SkeletonCard';
 
 const fetchCategory = async (
   categorySlug: string | undefined,
@@ -16,7 +12,7 @@ const fetchCategory = async (
   return await fetchCategoryBySlug(categorySlug);
 };
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({params}: PageProps) {
   const category = await fetchCategory(params.categorySlug);
   if (!category) return null;
 
@@ -25,8 +21,8 @@ export default async function Page({ params }: PageProps) {
       <h1 className="text-xl font-medium text-gray-400/80">{category.name}</h1>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {Array.from({ length: category.count }).map((_, i) => (
-          <SkeletonCard key={i} />
+        {Array.from({length: category.count}).map((_, i) => (
+          <SkeletonCard key={i}/>
         ))}
       </div>
     </div>

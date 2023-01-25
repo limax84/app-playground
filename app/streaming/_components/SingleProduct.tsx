@@ -1,10 +1,10 @@
-import { Pricing } from '#/app/streaming/_components/Pricing';
-import type { Product } from '#/types/Product';
-import { ProductRating } from '#/ui/ProductRating';
-import { cookies } from 'next/headers';
+import {Pricing} from '#/app/streaming/_components/Pricing';
+import type {Product} from '#/types/Product';
+import {ProductRating} from '#/ui/ProductRating';
+import {cookies} from 'next/headers';
 import Image from 'next/image';
 
-export const SingleProduct = ({ product }: { product: Product }) => {
+export const SingleProduct = ({product}: { product: Product }) => {
   // Get the cart count from the users cookies and pass it to the client
   // AddToCart component
   const cartCount = cookies().get('_cart_count')?.value || '0';
@@ -58,7 +58,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
           {product.name}
         </div>
 
-        <ProductRating rating={product.rating} />
+        <ProductRating rating={product.rating}/>
 
         <div className="space-y-4 text-sm text-gray-200">
           <p>{product.description}</p>
@@ -67,7 +67,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
       </div>
 
       <div className="col-span-full lg:col-span-1">
-        <Pricing product={product} cartCount={cartCount} />
+        <Pricing product={product} cartCount={cartCount}/>
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
-import { fetchCategories } from '#/lib/getCategories';
-import { Boundary } from '#/ui/Boundary';
-import { TabGroup } from '#/ui/TabGroup';
-import { CounterProvider } from 'app/context/CounterContext';
+import {fetchCategories} from '#/lib/getCategories';
+import {Boundary} from '#/ui/Boundary';
+import {TabGroup} from '#/ui/TabGroup';
+import {CounterProvider} from 'app/context/CounterContext';
 import React from 'react';
 import ContextClickCounter from './ContextClickCounter';
 
 export default async function Layout({
-  children,
-}: {
+                                       children,
+                                     }: {
   children: React.ReactNode;
 }) {
   const categories = await fetchCategories();
@@ -45,7 +45,7 @@ export default async function Layout({
                 />
               </div>
 
-              <ContextClickCounter />
+              <ContextClickCounter/>
               <div>{children}</div>
             </div>
           </Boundary>

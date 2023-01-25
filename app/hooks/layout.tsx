@@ -1,14 +1,14 @@
-import { fetchCategories } from '#/lib/getCategories';
-import { Boundary } from '#/ui/Boundary';
-import { ClickCounter } from '#/ui/ClickCounter';
+import {fetchCategories} from '#/lib/getCategories';
+import {Boundary} from '#/ui/Boundary';
+import {ClickCounter} from '#/ui/ClickCounter';
 import HooksClient from '#/ui/HooksClient';
 import HooksServer from '#/ui/HooksServer';
-import { TabGroup } from '#/ui/TabGroup';
+import {TabGroup} from '#/ui/TabGroup';
 import React from 'react';
 
 export default async function Layout({
-  children,
-}: {
+                                       children,
+                                     }: {
   children: React.ReactNode;
 }) {
   const categories = await fetchCategories();
@@ -30,15 +30,15 @@ export default async function Layout({
         />
 
         <div className="self-start">
-          <ClickCounter />
+          <ClickCounter/>
         </div>
       </div>
 
       <Boundary labels={['Client Component Hooks']}>
-        <HooksClient />
+        <HooksClient/>
       </Boundary>
       <Boundary labels={['Server Component Hooks']}>
-        <HooksServer />
+        <HooksServer/>
       </Boundary>
 
       <div>{children}</div>

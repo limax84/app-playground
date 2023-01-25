@@ -1,7 +1,7 @@
-import { fetchSubCategory, type PageProps } from '#/lib/getCategories';
-import { DefaultTags } from '#/ui/DefaultTags';
+import {fetchSubCategory, type PageProps} from '#/lib/getCategories';
+import {DefaultTags} from '#/ui/DefaultTags';
 
-export default async function Head({ params }: PageProps) {
+export default async function Head({params}: PageProps) {
   const category = await fetchSubCategory(
     params.categorySlug,
     params.subCategorySlug,
@@ -12,9 +12,9 @@ export default async function Head({ params }: PageProps) {
 
   return (
     <>
-      <DefaultTags />
+      <DefaultTags/>
       <title>{title}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={description}/>
     </>
   );
 }

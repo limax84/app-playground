@@ -2,10 +2,10 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 export const TabNavItem = ({
-  children,
-  href,
-  isActive,
-}: {
+                             children,
+                             href,
+                             isActive,
+                           }: {
   children: React.ReactNode;
   href: string;
   isActive?: boolean;

@@ -1,20 +1,20 @@
 'use client';
 
-import { Tab } from '#/ui/Tab';
+import {Tab} from '#/ui/Tab';
 import clsx from 'clsx';
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 
 const randomNumber = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1) + min);
 
-export function RandomPostTab({ path }: { path: string }) {
+export function RandomPostTab({path}: { path: string }) {
   const [post, setPost] = React.useState<null | { text: string; slug: string }>(
     null,
   );
 
   useEffect(() => {
     const randomId = String(randomNumber(3, 100));
-    setPost({ text: `Post ${randomId} (On Demand)`, slug: randomId });
+    setPost({text: `Post ${randomId} (On Demand)`, slug: randomId});
   }, []);
 
   return (
@@ -25,7 +25,7 @@ export function RandomPostTab({ path }: { path: string }) {
       })}
     >
       {post ? (
-        <Tab path={path} item={{ text: post.text, slug: post.slug }} />
+        <Tab path={path} item={{text: post.text, slug: post.slug}}/>
       ) : null}
     </div>
   );

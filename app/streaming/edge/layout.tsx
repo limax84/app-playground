@@ -1,13 +1,13 @@
-import { Boundary } from '#/ui/Boundary';
-import { cookies } from 'next/headers';
+import {Boundary} from '#/ui/Boundary';
+import {cookies} from 'next/headers';
 import React from 'react';
-import { CartCountProvider } from '../_components/CartCountContext';
-import { Header } from '../_components/Header';
+import {CartCountProvider} from '../_components/CartCountContext';
+import {Header} from '../_components/Header';
 
 export const runtime = 'experimental-edge';
 export const dynamic = 'force-dynamic';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({children}: { children: React.ReactNode }) {
   const cartCount = Number(cookies().get('_cart_count')?.value || '0');
 
   return (
@@ -28,7 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Boundary animateRerendering={false} labels={['Demo']} size="small">
         <CartCountProvider initialCartCount={cartCount}>
           <div className="space-y-10">
-            <Header />
+            <Header/>
 
             {children}
           </div>

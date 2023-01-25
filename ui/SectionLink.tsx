@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
 export const SectionLink = ({
-  children,
-  href,
-  text,
-}: {
+                              children,
+                              href,
+                              text,
+                            }: {
   children: React.ReactNode;
   href: string;
   text: string;

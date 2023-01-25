@@ -1,8 +1,8 @@
-import { Boundary } from '#/ui/Boundary';
-import { TabNavItem } from '#/ui/TabNavItem';
+import {Boundary} from '#/ui/Boundary';
+import {TabNavItem} from '#/ui/TabNavItem';
 import React from 'react';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({children}: { children: React.ReactNode }) {
   return (
     <Boundary
       labels={['checkout layout']}

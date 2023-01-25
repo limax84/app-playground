@@ -1,4 +1,4 @@
-import { TabGroup } from '#/ui/TabGroup';
+import {TabGroup} from '#/ui/TabGroup';
 import React from 'react';
 
 const items = [
@@ -24,7 +24,7 @@ const items = [
   },
 ];
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({children}: { children: React.ReactNode }) {
   return (
     <div className="space-y-9">
       <TabGroup

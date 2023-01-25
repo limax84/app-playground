@@ -1,4 +1,4 @@
-export const ProductLowStockWarning = ({ stock }: { stock: number }) => {
+export const ProductLowStockWarning = ({stock}: { stock: number }) => {
   if (stock > 3) {
     return null;
   }

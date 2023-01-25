@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useServerInsertedHTML } from 'next/navigation';
-import { StyleRegistry, createStyleRegistry } from 'styled-jsx';
+import React, {useState} from 'react';
+import {useServerInsertedHTML} from 'next/navigation';
+import {createStyleRegistry, StyleRegistry} from 'styled-jsx';
 
 export default function StyledJsxRegistry({
-  children,
-}: {
+                                            children,
+                                          }: {
   children: React.ReactNode;
 }) {
   // Only create stylesheet once with lazy initial state

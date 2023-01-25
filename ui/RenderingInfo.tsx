@@ -1,8 +1,8 @@
-import { RenderedTimeAgo } from '#/ui/RenderedTimeAgo';
+import {RenderedTimeAgo} from '#/ui/RenderedTimeAgo';
 
 export function RenderingInfo({
-  type,
-}: {
+                                type,
+                              }: {
   type: 'ssg' | 'ssgod' | 'ssr' | 'isr';
 }) {
   let msg = '';
@@ -27,7 +27,7 @@ export function RenderingInfo({
       <div className="text-sm text-gray-300">{msg}</div>
 
       <div className="flex">
-        <RenderedTimeAgo timestamp={Date.now()} />
+        <RenderedTimeAgo timestamp={Date.now()}/>
       </div>
     </div>
   );

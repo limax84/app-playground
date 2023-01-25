@@ -1,11 +1,12 @@
 'use client';
 
 import ms from 'ms';
-import { useEffect, useRef, useState } from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 // https://github.com/streamich/react-use/blob/master/src/useInterval.ts
 const useInterval = (callback: Function, delay?: number | null) => {
-  const savedCallback = useRef<Function>(() => {});
+  const savedCallback = useRef<Function>(() => {
+  });
 
   useEffect(() => {
     savedCallback.current = callback;
@@ -21,7 +22,7 @@ const useInterval = (callback: Function, delay?: number | null) => {
   }, [delay]);
 };
 
-export function RenderedTimeAgo({ timestamp }: { timestamp: number }) {
+export function RenderedTimeAgo({timestamp}: { timestamp: number }) {
   // TODO: Fix flash of "0s" for SSG:
   // During SSG, Date.now() and `timestamp` are the same. It's only after
   // hydration that the difference is correctly calculated.

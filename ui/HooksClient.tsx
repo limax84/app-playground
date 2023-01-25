@@ -1,11 +1,7 @@
 'use client';
 
 import React from 'react';
-import {
-  usePathname,
-  useSelectedLayoutSegments,
-  useSearchParams,
-} from 'next/navigation';
+import {usePathname, useSearchParams, useSelectedLayoutSegments,} from 'next/navigation';
 
 const HooksClient = () => {
   const pathname = usePathname();

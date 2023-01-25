@@ -1,17 +1,17 @@
 'use client';
 
-import { useCountUp } from 'use-count-up';
+import {useCountUp} from 'use-count-up';
 
 const CountUp = ({
-  start,
-  end,
-  duration = 1,
-}: {
+                   start,
+                   end,
+                   duration = 1,
+                 }: {
   start: number;
   end: number;
   duration?: number;
 }) => {
-  const { value } = useCountUp({
+  const {value} = useCountUp({
     isCounting: true,
     end,
     start,

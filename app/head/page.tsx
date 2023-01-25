@@ -1,5 +1,5 @@
-import { ExternalLink } from '#/ui/ExternalLink';
-import { HeadInfo } from './HeadInfo';
+import {ExternalLink} from '#/ui/ExternalLink';
+import {HeadInfo} from './HeadInfo';
 
 export default function Page() {
   return (
@@ -8,7 +8,7 @@ export default function Page() {
         Configuring the Head Tag
       </h1>
 
-      <HeadInfo />
+      <HeadInfo/>
 
       <div className="space-y-4">
         <ul className="list-disc space-y-2 pl-4 text-sm text-gray-300">

@@ -1,11 +1,11 @@
-import { RenderingInfo } from '#/ui/RenderingInfo';
+import {RenderingInfo} from '#/ui/RenderingInfo';
 
 export async function generateStaticParams() {
   // Generate two pages at build time and the rest (3-100) on-demand
-  return [{ id: '1' }, { id: '2' }];
+  return [{id: '1'}, {id: '2'}];
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({params}: { params: { id: string } }) {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.id}`,
   );
@@ -22,7 +22,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <p className="font-medium text-gray-500 line-clamp-3">{data.body}</p>
       </div>
       <div className="-order-1 col-span-full lg:order-none lg:col-span-2">
-        <RenderingInfo type={isOnDemand ? 'ssgod' : 'ssg'} />
+        <RenderingInfo type={isOnDemand ? 'ssgod' : 'ssg'}/>
       </div>
     </div>
   );

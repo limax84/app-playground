@@ -1,8 +1,8 @@
-import { TabGroup } from '#/ui/TabGroup';
+import {TabGroup} from '#/ui/TabGroup';
 import React from 'react';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  const ids = [{ id: '1' }, { id: '2' }, { id: '3' }];
+export default function Layout({children}: { children: React.ReactNode }) {
+  const ids = [{id: '1'}, {id: '2'}, {id: '3'}];
 
   return (
     <div className="space-y-9">

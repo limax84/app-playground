@@ -1,9 +1,9 @@
 'use client';
 
 export default function Footer({
-  reactVersion,
-  nextVersion,
-}: {
+                                 reactVersion,
+                                 nextVersion,
+                               }: {
   reactVersion: string;
   nextVersion: string;
 }) {
