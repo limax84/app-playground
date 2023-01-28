@@ -1,4 +1,4 @@
-import {demos} from '#/lib/demos';
+import {menus} from '#/lib/menu';
 import Link from 'next/link';
 
 export default function Page() {
@@ -7,7 +7,7 @@ export default function Page() {
       <h1 className="text-xl font-medium text-gray-300">Examples</h1>
 
       <div className="text-white space-y-10">
-        {demos.map((section) => {
+        {menus.map((section) => {
           return (
             <div key={section.name} className="space-y-5">
               <div className="text-xs font-semibold uppercase tracking-wider text-gray-400">
@@ -15,10 +15,10 @@ export default function Page() {
               </div>
 
               <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-                {section.items.map((item) => {
+                {section.items?.map((item) => {
                   return (
                     <Link
-                      href={`/${item.slug}`}
+                      href={`/${section.slug}/${item.slug}`}
                       key={item.name}
                       className="group block space-y-1.5 rounded-lg bg-gray-900 px-5 py-3 hover:bg-gray-800"
                     >

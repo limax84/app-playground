@@ -6,6 +6,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './ui/**/*.{js,ts,jsx,tsx}',
+    './web3/**/*.{js,ts,jsx,tsx}',
   ],
   future: {
     hoverOnlyWhenSupported: true,
@@ -30,6 +31,29 @@ module.exports = {
           'colors.gray.500',
         )}, 50px, ${theme('colors.gray.800')} 50%)`,
       }),
+      boxShadow: {
+        sm: ['0 0 4px 0 rgb(0, 0, 0, 0.5)'],
+        md: ['0 0 8px 0 rgb(0, 0, 0, 0.5)'],
+        lg: ['0 0 12px 0 rgb(0, 0, 0, 0.5)'],
+        xl: ['0 0 14px 2px rgb(0, 0, 0, 0.5)'],
+        lightGlow: ['0px 0px 120px 40px rgba(255, 255, 255, 0.2)'],
+        lightGlowShort: ['0px 10px 40px 40px rgba(255, 255, 255, 0.2)'],
+        lightGlowShorter: ['0px 0px 16px 8px rgba(255, 255, 255, 0.25)'],
+        lightGlowShortest: ['0px 0px 12px 4px rgba(255, 255, 255, 0.35)'],
+        lightPanel: ['0px 0px 25px 0px  rgba(255, 255, 255, 0.5), 0px 0px 4px 3px rgb(0 0 0), 0px 0px 3px 1px rgb(0 0 0), 0px 0px 2px 1px rgb(0 0 0)'],
+        white: ['0px 0px 1px rgb(255 255 255 / 10%)'],
+        insetDark: ['inset 0 0 3px 1px rgb(0 0 0 / 30%)']
+      },
+      dropShadow: {
+        logo: ['1px 1px 2px rgb(0 0 0 / 25%)'],
+        logoDark: ['1px 1px 2px rgb(255 255 255 / 25%)'],
+        baseline: ['3px 2px 2px rgb(0 0 0 / 50%)'],
+        strong: ['1px 1px 3px rgb(0 0 0 / 100%)'],
+        light1px: ['-1px 1px 0px white']
+      },
+      textShadow: {
+        DEFAULT: '0 0 4px rgb(0 0 0 / 100%)'
+      },
       keyframes: ({theme}) => ({
         rerender: {
           '0%': {
@@ -85,5 +109,8 @@ module.exports = {
       }),
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp')
+  ],
 };
