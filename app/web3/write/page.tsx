@@ -7,7 +7,7 @@ import {Web3Connect} from '#/web3/web3-connect'
 import {Boundary} from '#/ui/Boundary'
 
 import testContractDef from '#/web3/contractsDef/InteractionTest/mumbai/InteractionTest-mumbai.json'
-import {bigNumberToNumber, check, encodeString, hexToUtf8, stringToBytes32, stringToBytes4} from '#/utils/utils';
+import {check, encodeString, stringToBytes32, stringToBytes4} from '#/utils/utils';
 import {prepareWriteContract, writeContract} from '@wagmi/core';
 import {getRevertErrorMessage, IntegrationTestEnum} from '#/web3/web3-utils';
 import Test from '#/app/web3/read/test';
@@ -53,10 +53,10 @@ export default function Page() {
     {
       name: 'write_AccessControl (KO)',
       ref: useRef(),
-      testFunction: getTestWrite('write_AccessControl', [encodeString('test')]),
+      testFunction: getTestWrite('write_AccessControl', [encodeString('expectedRole')]),
       checkFunction: (data: any, errorMessage: any) => {
         check(!data, 'Data should be null, instead got: ' + data?.toString())
-        check(errorMessage?.toLowerCase() === ('Custom Error: AccessControl_MissingRole(' + address + ', ' + encodeString('test').slice(2) + ')').toLowerCase(), 'Wrong error message')
+        check(errorMessage?.toLowerCase() === ('Custom Error: AccessControl_MissingRole(' + address + ', ' + encodeString('expectedRole').slice(2) + ')').toLowerCase(), 'Wrong error message')
       }
     },
     {
@@ -112,7 +112,6 @@ export default function Page() {
       ref: useRef(),
       testFunction: getTestWrite('write_Enum', [true, IntegrationTestEnum.VALUE3]),
       checkFunction: (data: any, errorMessage: any) => {
-        console.log('write_Enum (OK)', data, errorMessage)
         check(!data, 'Data should be null, instead got: ' + data?.toString())
         check(errorMessage?.includes('Error_Enum('), 'Wrong error message, got : ' + errorMessage)
       }
