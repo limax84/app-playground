@@ -20,3 +20,22 @@
 .custom-toast-body > div:last-child {
   @apply text-[1rem] lg:text-[1.1rem];
 }
+
+
+.noScrollBar::-webkit-scrollbar {
+  width: 0;
+}
+
+
+.lightScrollBar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.lightScrollBar::-webkit-scrollbar-track {
+  background: #000;
+}
+
+.lightScrollBar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #666;
+}

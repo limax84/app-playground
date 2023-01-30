@@ -31,9 +31,9 @@ export const menus: Item[] = [
         description: 'Tests EVM events',
       },
       {
-        name: 'Errors',
-        slug: 'errors',
-        description: 'Tests EVM errors',
+        name: 'Contracts',
+        slug: 'contracts',
+        description: 'Admin Smart-Contracts',
       },
     ],
   },

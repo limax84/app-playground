@@ -4,7 +4,7 @@ import {Item, menus} from '#/lib/menu';
 
 export default async function Layout({children}: { children: React.ReactNode }) {
   return (
-    <div className="space-y-9">
+    <div className="space-y-8">
       <div className="flex justify-between">
         <TabGroup
           path="/web3"

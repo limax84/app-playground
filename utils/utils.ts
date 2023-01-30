@@ -1,4 +1,5 @@
 import {BigNumber, ethers} from 'ethers';
+import {DateTime} from 'luxon';
 
 // Expose globally the given object with the given name
 //////////////////////////////////////////////////////////////
@@ -131,4 +132,33 @@ export const pause = (delayInMs: number) => {
       resolve()
     }, delayInMs)
   })
+}
+
+// Duplicates remover
+//////////////////////////////////////////////////////////////
+export const removeDuplicates = (arr: any[], compareMethod: (a: any, b: any) => boolean) =>
+  arr.filter((item, index, self) => self.findIndex(t => compareMethod(t, item)) === index)
+
+// Date formatting
+//////////////////////////////////////////////////////////////
+export const formatDt = (tspInMs: number, formatOptions?: Intl.DateTimeFormatOptions) =>
+  DateTime.fromMillis(tspInMs).toLocaleString(formatOptions || DateTime.DATETIME_SHORT_WITH_SECONDS)
+
+// TWO Arrays comparison
+//////////////////////////////////////////////////////////////
+export const arraysEqual = (a: object[], b: object[]): boolean => {
+  if (a === b) return true
+  if (a == null || b == null) return false
+  if (a.length !== b.length) return false
+
+  for (let i = 0; i < a.length; ++i) {
+    if (!isEqual(a[i], b[i])) return false
+  }
+  return true
+}
+
+// TWO Objects comparison
+//////////////////////////////////////////////////////////////
+function isEqual(a: object, b: object): boolean {
+  return JSON.stringify(a) === JSON.stringify(b)
 }

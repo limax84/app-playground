@@ -1,4 +1,4 @@
-import {encodeString, expose, hexToDec, hexToUtf8} from '#/utils/utils'
+import {bigNumberToNumber, encodeString, expose, hexToDec, hexToUtf8} from '#/utils/utils'
 
 const GET_ERROR_FUNCTION = (errorFunctionName: string) => {
   return {
@@ -165,6 +165,34 @@ export const getRevertErrorMessage = (err: any, errorFunctionNames?: string[]) =
 
   }
 }
+
+/**
+ * Decode encoded Value
+ * @param value
+ * @param type
+ */
+export const decodedValue = (value: any, type: string) => {
+  switch (type) {
+    case 'string':
+    case 'string[]':
+    case 'address':
+    case 'bool':
+      return value
+    case 'uint256':
+    case 'uint64':
+    case 'uint32':
+    case 'uint4':
+    case 'int256':
+    case 'int64':
+    case 'int32':
+    case 'int4':
+      return bigNumberToNumber(value)
+    default:
+      console.warn('> WARNING! - getDecodedValue() - UNKNOWN Type: [' + type + '] cannot decode value: ', value)
+  }
+  return undefined
+}
+
 expose('getRevertErrorMessage', getRevertErrorMessage)
 expose('hexToDec', hexToDec)
 expose('hexToUtf8', hexToUtf8)

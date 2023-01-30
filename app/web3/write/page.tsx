@@ -62,7 +62,7 @@ export default function Page() {
     {
       name: 'write_string (OK)',
       ref: useRef(),
-      testFunction: getTestWrite('write_string', [false, 'testWriteString']),
+      testFunction: getTestWrite('write_string', [false, 'testWriteStringtestWriteStringtestWriteStringtestWriteStringtestWriteStringtestWriteStringtestWriteString']),
       checkFunction: (data: any, errorMessage: any) => {
         check(!errorMessage, 'Error should be null, instead got: ' + errorMessage)
         check(data, 'Data should not be null')

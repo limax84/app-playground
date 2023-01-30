@@ -4,11 +4,11 @@ import '#/styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 import {AddressBar} from '#/ui/AddressBar';
 import {GlobalNav} from '#/ui/GlobalNav';
-import Web3Context from '#/web3/web3-context';
 import {ToastContainer} from 'react-toastify';
 import {LangProvider} from '#/utils/language';
 import Head from '#/app/head';
 import {JarvixLogo} from '#/ui/JarvixLogo';
+import {Web3Provider} from '#/web3/web3-context';
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
@@ -17,7 +17,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     <body className="overflow-y-scroll bg-gray-1100 bg-[url('/grid.svg')]">
 
     <LangProvider>
-      <Web3Context>
+      <Web3Provider>
 
         <GlobalNav/>
 
@@ -56,7 +56,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
           bodyClassName={'custom-toast-body'}
         />
 
-      </Web3Context>
+      </Web3Provider>
     </LangProvider>
 
     </body>

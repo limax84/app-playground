@@ -42,7 +42,8 @@ module.exports = {
         lightGlowShortest: ['0px 0px 12px 4px rgba(255, 255, 255, 0.35)'],
         lightPanel: ['0px 0px 25px 0px  rgba(255, 255, 255, 0.5), 0px 0px 4px 3px rgb(0 0 0), 0px 0px 3px 1px rgb(0 0 0), 0px 0px 2px 1px rgb(0 0 0)'],
         white: ['0px 0px 1px rgb(255 255 255 / 10%)'],
-        insetDark: ['inset 0 0 3px 1px rgb(0 0 0 / 30%)']
+        insetDark: ['inset 0 0 3px 1px rgb(0 0 0 / 30%)'],
+        insetDarkStrong: ['inset 0 0 6px 3px rgb(0 0 0 / 50%)']
       },
       dropShadow: {
         logo: ['1px 1px 2px rgb(0 0 0 / 25%)'],
